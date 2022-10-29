@@ -1,0 +1,14 @@
+Julia Caroline M. C. Humbird
+============================
+
+1. Com suas palavras descreva o que é a DOM e qual sua relação com o HTML?
+O DOM (Document Object Model) é um padrão muito utilizado para interagir com objetos na linguagem de marcação HTML. Com ele, é possível manipular elementos em uma página na web sem precisar usar o refresh.
+
+2. O que é o canvas HTML?
+O Canvas é um elemento na linguagem de marcação HTML que possibilita o desenho de gráficos e construção de animações em uma página web. Isso pode ser feito a partir da utilização de scripts, como, por exemplo, o JavaScript.
+
+3. Quais as linguagens e tecnologias comumente envolvidas no desenvolvimento de produtos baseados em canvas html?
+Normalmente, utilizamos HTML, CSS e Javascript no Canvas.
+
+4. – Explique para que serve o código “document.getElementById()”
+A propriedade “document.getElementById()” serve para buscar um elemento no código a partir do seu atributo ID.
