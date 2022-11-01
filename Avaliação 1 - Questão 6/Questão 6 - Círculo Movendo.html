@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Figuras</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  
+</head>
+
+<body>
+  
+  <div class="container" style="width:700px; height:700px; margin: 10px auto 0; align-items:center; display:flex; justify-content:center;">
+    <canvas id="figuras" style="background:#f4f4f4;" width="700px" height="700px"></canvas>
+  </div>
+  
+  <script type="text/javascript">
+      
+		const canvas = document.getElementById("figuras");
+		const ctx=canvas.getContext("2d");
+    let x = (canvas.width)/2;
+    let y = (canvas.height)/2;
+    let direcaoX = 1;
+    let direcaoY = -1;
+    let speed = 3;
+    let pixelsX = 0;
+    let pixelsY = 0;
+    
+    // Círculo
+    function circulo(){
+      ctx.beginPath();
+      ctx.fillStyle = "pink";
+      ctx.arc(x, y, 70, (Math.PI / 180) * 360, (Math.PI / 180) * 0);
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.fill();
+      x += pixelsX * direcaoX;
+      y += pixelsY * direcaoY;
+    }
+
+    function changeDirection(axis, isPositive){
+      if(axis.toUpperCase() === 'X'){
+          direcaoX = isPositive ? 1 : -1;
+          pixelsX = speed;
+          pixelsY = 0;
+      } else {
+          direcaoY = isPositive ? 1 : -1;
+          pixelsX = 0;
+          pixelsY = speed;
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {            
+      switch(e.key) {
+          case 'ArrowUp': { 
+              changeDirection('Y', false);
+              break;
+          }
+          case 'ArrowDown': { 
+              changeDirection('Y', true);
+              break;
+          }
+          case 'ArrowLeft': { 
+              changeDirection('X', false);
+              break;
+          }
+          case 'ArrowRight': { 
+              changeDirection('X', true);
+              break;
+          }
+      }
+    })
+
+    setInterval(circulo, 50)
+              
+	</script>
+
+</body>
+
+</html>
